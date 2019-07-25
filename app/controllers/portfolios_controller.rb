@@ -2,7 +2,7 @@ class PortfoliosController < ApplicationController
   def index
     @portfolio_items = Portfolio.all
   end
-  
+
   def angular
     @angular_portfolio_items = Portfolio.angular
   end
@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
   end
 
   def create
-    @portfolio_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitles, :body))
+    @portfolio_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
 
     respond_to do |format|
       if @portfolio_items.save
